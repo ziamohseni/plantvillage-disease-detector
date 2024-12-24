@@ -2,6 +2,17 @@
 
 This project aims to detect plant diseases from images using a convolutional neural network. It includes training and inference codes, and a Docker-based development environment for easy setup. You can train your model or use our trained model.
 
+## ⚠️ Important Warning
+
+> **Training Requirements:**  
+> This model requires significant computational resources. Training on CPU-only systems is **NOT** recommended as it:
+>
+> - May take an extremely long time to complete
+> - Could cause system instability or crashes
+> - Is highly inefficient for deep learning tasks
+>
+> Please ensure you have access to a GPU for training the model.
+
 ## Getting Started
 
 ### 1. **Clone the Repository:**
