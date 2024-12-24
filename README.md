@@ -1,6 +1,6 @@
 # Plant Disease Detection Project
 
-This project aims to detect plant diseases from images using a convolutional neural network. It includes training and inference codes, and a Docker-based development environment for easy setup.
+This project aims to detect plant diseases from images using a convolutional neural network. It includes training and inference codes, and a Docker-based development environment for easy setup. You can train your model or use our trained model.
 
 ## Getting Started
 
@@ -17,11 +17,11 @@ Download the "data" and "models" folders with their contents from OneDrive:
 
 - Link: [https://kth-my.sharepoint.com/:f:/g/personal/zmohseni_ug_kth_se/EiTxnU7DaaZGhYqGVSgksyUB8d5IOttju_A5wvgazeykRg?e=ahwyLR](https://kth-my.sharepoint.com/:f:/g/personal/zmohseni_ug_kth_se/EiTxnU7DaaZGhYqGVSgksyUB8d5IOttju_A5wvgazeykRg?e=ahwyLR)
 
-After downloading, place both folders in the root directory of the project.
+After downloading, unzip and place both folders in the root directory of the project.
 
 ## Prerequisites
 
-- **Docker Desktop:** Ensure you have Docker Desktop installed and running.
+- **Docker Desktop:** Ensure you have Docker Desktop installed and running (https://www.docker.com/products/docker-desktop/).
 
 ---
 
