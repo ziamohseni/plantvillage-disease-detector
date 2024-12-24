@@ -2,6 +2,23 @@
 
 This project aims to detect plant diseases from images using a convolutional neural network. It includes training and inference codes, and a Docker-based development environment for easy setup.
 
+## Getting Started
+
+### 1. **Clone the Repository:**
+
+```bash
+git clone https://github.com/ziamohseni/plantvillage-disease-detector.git
+cd plantvillage-disease-detector
+```
+
+### 2. **Download Required Data:**
+
+Download the "data" and "models" folders with their contents from OneDrive:
+
+- Link: [https://kth-my.sharepoint.com/:f:/g/personal/zmohseni_ug_kth_se/EiTxnU7DaaZGhYqGVSgksyUB8d5IOttju_A5wvgazeykRg?e=ahwyLR](https://kth-my.sharepoint.com/:f:/g/personal/zmohseni_ug_kth_se/EiTxnU7DaaZGhYqGVSgksyUB8d5IOttju_A5wvgazeykRg?e=ahwyLR)
+
+After downloading, place both folders in the root directory of the project.
+
 ## Prerequisites
 
 - **Docker Desktop:** Ensure you have Docker Desktop installed and running.
@@ -40,3 +57,7 @@ Press `Ctrl + C` in the terminal to stop the container.
 ### Dependencies:
 
 If you need to add new Python packages, update `requirements.txt` and rebuild the image by following step 1.
+
+### Trained Model
+
+You can find statistics and terminal output for the trained model in `trained-model-stat` folder.

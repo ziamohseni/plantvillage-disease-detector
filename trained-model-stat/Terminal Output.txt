@@ -1,0 +1,178 @@
+Zia@Zia MSYS ~/Desktop/ID1214-Artificial-Intelligence/plant-disease-detection (main)
+$ docker build -t plant-disease:latest .
+[+] Building 1.7s (12/12) FINISHED                                                                                                                                                  docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                                                0.0s
+ => => transferring dockerfile: 535B                                                                                                                                                                0.0s
+ => [internal] load metadata for docker.io/tensorflow/tensorflow:2.17.0-gpu                                                                                                                         1.0s
+ => [auth] tensorflow/tensorflow:pull token for registry-1.docker.io                                                                                                                                0.0s
+ => [internal] load .dockerignore                                                                                                                                                                   0.0s
+ => => transferring context: 2B                                                                                                                                                                     0.0s
+ => [1/6] FROM docker.io/tensorflow/tensorflow:2.17.0-gpu@sha256:ebf7ad13136740adeee241fcfe6b14d646e431c6bc5c151d528e31ddafde4623                                                                   0.0s
+ => [internal] load build context                                                                                                                                                                   0.6s
+ => => transferring context: 2.38MB                                                                                                                                                                 0.5s
+ => CACHED [2/6] WORKDIR /app                                                                                                                                                                       0.0s
+ => CACHED [3/6] COPY requirements.txt .                                                                                                                                                            0.0s
+ => CACHED [4/6] RUN pip install --upgrade pip && pip install -r requirements.txt                                                                                                                   0.0s
+ => CACHED [5/6] RUN pip install watchfiles                                                                                                                                                         0.0s
+ => CACHED [6/6] COPY . .                                                                                                                                                                           0.0s
+ => exporting to image                                                                                                                                                                              0.0s
+ => => exporting layers                                                                                                                                                                             0.0s
+ => => writing image sha256:96eed5f159d5d72e7b3adb7a3a47f38ce63603aaa90b690985cd1db225024ba8                                                                                                        0.0s 
+ => => naming to docker.io/library/plant-disease:latest                                                                                                                                             0.0s 
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/6ykrlfn0yeclckg4zqrsfq3sz
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+Zia@Zia MSYS ~/Desktop/ID1214-Artificial-Intelligence/plant-disease-detection (main)
+$ docker run --rm -p 8501:8501 --gpus all plant-disease:latest
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:8501
+
+2024-12-24 09:17:01.331432: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-12-24 09:17:01.409416: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-12-24 09:17:01.430220: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-12-24 09:17:01.585144: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1735031919.280989      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.333937      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.333999      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.337911      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.337969      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.337986      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.497180      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+I0000 00:00:1735031919.497247      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-12-24 09:18:39.497259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2112] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+I0000 00:00:1735031919.497285      47 cuda_executor.cc:1001] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-12-24 09:18:39.497706: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2021] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 4699 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+Available GPUs: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Found 16504 files belonging to 15 classes.
+Found 2070 files belonging to 15 classes.
+Found 2064 files belonging to 15 classes.
+2024-12-24 09:19:08.722744: I tensorflow/core/framework/local_rendezvous.cc:404] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+/usr/local/lib/python3.11/dist-packages/keras/src/layers/preprocessing/tf_data_layer.py:19: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+Epoch 1/100
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1735031951.399134      84 service.cc:146] XLA service 0x7f9c700064d0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1735031951.399171      84 service.cc:154]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
+2024-12-24 09:19:11.472769: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2024-12-24 09:19:11.796268: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:531] Loaded cuDNN version 8906
+2024-12-24 09:19:21.548110: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.30GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:19:23.783761: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.20GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:19:24.960404: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.20GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:19:27.339981: I external/local_xla/xla/stream_executor/cuda/cuda_asm_compiler.cc:393] ptxas warning : Registers are spilled to local memory in function 'loop_add_subtract_fusion_14', 4 bytes spill stores, 12 bytes spill loads
+
+I0000 00:00:1735031967.363545      84 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+515/516 ━━━━━━━━━━━━━━━━━━━━ 0s 220ms/step - accuracy: 0.3254 - loss: 2.28912024-12-24 09:21:27.941456: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.23GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:21:29.511176: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:21:30.344047: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.19GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:21:34.606691: I external/local_xla/xla/stream_executor/cuda/cuda_asm_compiler.cc:393] ptxas warning : Registers are spilled to local memory in function 'loop_add_subtract_fusion_7', 4 bytes spill stores, 12 bytes spill loads
+
+516/516 ━━━━━━━━━━━━━━━━━━━━ 0s 247ms/step - accuracy: 0.3256 - loss: 2.28802024-12-24 09:21:38.028012: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 5.05GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:21:39.475637: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.59GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:21:40.925008: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.40GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-12-24 09:21:46.722730: W external/local_tsl/tsl/framework/bfc_allocator.cc:291] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.74GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+516/516 ━━━━━━━━━━━━━━━━━━━━ 161s 276ms/step - accuracy: 0.3258 - loss: 2.2870 - val_accuracy: 0.2903 - val_loss: 3.2121 - learning_rate: 0.0010
+Epoch 2/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.5911 - loss: 1.1940 - val_accuracy: 0.2396 - val_loss: 7.1367 - learning_rate: 0.0010
+Epoch 3/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 224ms/step - accuracy: 0.6652 - loss: 0.9322 - val_accuracy: 0.4126 - val_loss: 3.1695 - learning_rate: 0.0010
+Epoch 4/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.7318 - loss: 0.7431 - val_accuracy: 0.2797 - val_loss: 8.0415 - learning_rate: 0.0010
+Epoch 5/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 224ms/step - accuracy: 0.7893 - loss: 0.5825 - val_accuracy: 0.3604 - val_loss: 6.0824 - learning_rate: 0.0010
+Epoch 6/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 224ms/step - accuracy: 0.8145 - loss: 0.5140 - val_accuracy: 0.7874 - val_loss: 0.7789 - learning_rate: 0.0010
+Epoch 7/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.8533 - loss: 0.4092 - val_accuracy: 0.6449 - val_loss: 1.8926 - learning_rate: 0.0010
+Epoch 8/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.8657 - loss: 0.3688 - val_accuracy: 0.6923 - val_loss: 1.2657 - learning_rate: 0.0010
+Epoch 9/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.8898 - loss: 0.3078 - val_accuracy: 0.7870 - val_loss: 0.7160 - learning_rate: 0.0010
+Epoch 10/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.8959 - loss: 0.3000 - val_accuracy: 0.6560 - val_loss: 1.8010 - learning_rate: 0.0010
+Epoch 11/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.9019 - loss: 0.2736 - val_accuracy: 0.7145 - val_loss: 1.0904 - learning_rate: 0.0010
+Epoch 12/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.9207 - loss: 0.2171 - val_accuracy: 0.5874 - val_loss: 2.9330 - learning_rate: 0.0010
+Epoch 13/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.9381 - loss: 0.1621 - val_accuracy: 0.7657 - val_loss: 1.1680 - learning_rate: 0.0010
+Epoch 14/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.9324 - loss: 0.1923 - val_accuracy: 0.5469 - val_loss: 1.8073 - learning_rate: 0.0010
+Epoch 15/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 226ms/step - accuracy: 0.9426 - loss: 0.1532 - val_accuracy: 0.8198 - val_loss: 0.8983 - learning_rate: 5.0000e-04
+Epoch 16/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 118s 229ms/step - accuracy: 0.9674 - loss: 0.0791 - val_accuracy: 0.8309 - val_loss: 0.8568 - learning_rate: 5.0000e-04
+Epoch 17/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 226ms/step - accuracy: 0.9707 - loss: 0.0764 - val_accuracy: 0.8507 - val_loss: 0.6086 - learning_rate: 5.0000e-04
+Epoch 18/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 227ms/step - accuracy: 0.9701 - loss: 0.0765 - val_accuracy: 0.9145 - val_loss: 0.2714 - learning_rate: 5.0000e-04
+Epoch 19/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 224ms/step - accuracy: 0.9811 - loss: 0.0513 - val_accuracy: 0.8261 - val_loss: 0.7430 - learning_rate: 5.0000e-04
+Epoch 20/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 118s 228ms/step - accuracy: 0.9787 - loss: 0.0531 - val_accuracy: 0.9329 - val_loss: 0.2655 - learning_rate: 5.0000e-04
+Epoch 21/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.9682 - loss: 0.0823 - val_accuracy: 0.9024 - val_loss: 0.3981 - learning_rate: 5.0000e-04
+Epoch 22/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 227ms/step - accuracy: 0.9753 - loss: 0.0602 - val_accuracy: 0.9386 - val_loss: 0.2491 - learning_rate: 5.0000e-04
+Epoch 23/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 226ms/step - accuracy: 0.9815 - loss: 0.0459 - val_accuracy: 0.8860 - val_loss: 0.5006 - learning_rate: 5.0000e-04
+Epoch 24/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 225ms/step - accuracy: 0.9700 - loss: 0.0820 - val_accuracy: 0.9135 - val_loss: 0.3800 - learning_rate: 5.0000e-04
+Epoch 25/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 227ms/step - accuracy: 0.9854 - loss: 0.0311 - val_accuracy: 0.8773 - val_loss: 0.6292 - learning_rate: 5.0000e-04
+Epoch 26/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 225ms/step - accuracy: 0.9856 - loss: 0.0320 - val_accuracy: 0.8686 - val_loss: 0.5810 - learning_rate: 5.0000e-04
+Epoch 27/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 224ms/step - accuracy: 0.9868 - loss: 0.0298 - val_accuracy: 0.8826 - val_loss: 0.4920 - learning_rate: 5.0000e-04
+Epoch 28/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 118s 229ms/step - accuracy: 0.9865 - loss: 0.0366 - val_accuracy: 0.9377 - val_loss: 0.2283 - learning_rate: 2.5000e-04
+Epoch 29/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 122s 237ms/step - accuracy: 0.9936 - loss: 0.0155 - val_accuracy: 0.9271 - val_loss: 0.3490 - learning_rate: 2.5000e-04
+Epoch 30/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 121s 234ms/step - accuracy: 0.9927 - loss: 0.0171 - val_accuracy: 0.9169 - val_loss: 0.3752 - learning_rate: 2.5000e-04
+Epoch 31/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 226ms/step - accuracy: 0.9962 - loss: 0.0095 - val_accuracy: 0.9618 - val_loss: 0.1521 - learning_rate: 2.5000e-04
+Epoch 32/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 224ms/step - accuracy: 0.9964 - loss: 0.0095 - val_accuracy: 0.9184 - val_loss: 0.3364 - learning_rate: 2.5000e-04
+Epoch 33/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 224ms/step - accuracy: 0.9965 - loss: 0.0099 - val_accuracy: 0.9319 - val_loss: 0.2572 - learning_rate: 2.5000e-04
+Epoch 34/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 225ms/step - accuracy: 0.9974 - loss: 0.0068 - val_accuracy: 0.9290 - val_loss: 0.3252 - learning_rate: 2.5000e-04
+Epoch 35/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 115s 223ms/step - accuracy: 0.9981 - loss: 0.0064 - val_accuracy: 0.7676 - val_loss: 1.2100 - learning_rate: 2.5000e-04
+Epoch 36/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 226ms/step - accuracy: 0.9947 - loss: 0.0124 - val_accuracy: 0.8522 - val_loss: 0.7376 - learning_rate: 2.5000e-04
+Epoch 37/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 226ms/step - accuracy: 0.9971 - loss: 0.0070 - val_accuracy: 0.9324 - val_loss: 0.2953 - learning_rate: 1.2500e-04
+Epoch 38/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 117s 227ms/step - accuracy: 0.9975 - loss: 0.0056 - val_accuracy: 0.9314 - val_loss: 0.3112 - learning_rate: 1.2500e-04
+Epoch 39/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 225ms/step - accuracy: 0.9987 - loss: 0.0046 - val_accuracy: 0.9372 - val_loss: 0.2678 - learning_rate: 1.2500e-04
+Epoch 40/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 225ms/step - accuracy: 0.9988 - loss: 0.0030 - val_accuracy: 0.9362 - val_loss: 0.2668 - learning_rate: 1.2500e-04
+Epoch 41/100
+516/516 ━━━━━━━━━━━━━━━━━━━━ 116s 225ms/step - accuracy: 0.9995 - loss: 0.0023 - val_accuracy: 0.9198 - val_loss: 0.3771 - learning_rate: 1.2500e-04
+65/65 ━━━━━━━━━━━━━━━━━━━━ 8s 122ms/step - accuracy: 0.9585 - loss: 0.1487
+WARNING:tensorflow:5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7f9cb46c9620> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7f9d4bfc20c0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+Test Accuracy: 0.9612
+Test Loss: 0.1364
+  Stopping...
