@@ -60,6 +60,14 @@ Or run with GPU support (if you have Nvidia GPU)
 docker run --rm -p 8501:8501 --gpus all plant-disease:latest
 ```
 
+### 3. **Training or using the trained model:**
+
+You can now visit your localhost to train or use the pre-trained model.
+
+```bash
+http://localhost:8501/
+```
+
 **Stopping the Container:**  
 Press `Ctrl + C` in the terminal to stop the container.
 
