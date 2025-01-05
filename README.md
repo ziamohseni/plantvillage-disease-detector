@@ -30,6 +30,28 @@ Download the "data" and "models" folders with their contents from OneDrive:
 
 After downloading, unzip and place both folders in the root directory of the project.
 
+### 3. **Projcet structure:**
+
+After you are done with Getting Started steps, you should have the following project structure.
+
+```bash
+.
+├── data
+│   ├── test
+│   ├── train
+│   └── val
+├── models
+│   ├── class_names.txt
+│   └── plant_disease_model_20241224_091839.keras
+├── src
+├── trained-model-stat
+├── .gitignore
+├── app.py
+├── Dockerfile
+├── README.md
+└── requirements.txt
+```
+
 ## Prerequisites
 
 - **Docker Desktop:** Ensure you have Docker Desktop installed and running (https://www.docker.com/products/docker-desktop/).
